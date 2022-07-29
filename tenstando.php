@@ -14,7 +14,7 @@ function testaGetAll($repository)
     var_dump($allStudents);
 }
 
-testaGetAll($repository);
+//testaGetAll($repository);
 
 function testaGetStudentsBirthAt($repository){
     $brithDate = new \DateTimeImmutable('1999-09-19');
@@ -22,7 +22,7 @@ function testaGetStudentsBirthAt($repository){
     var_dump($result);
 }
 
-testaGetStudentsBirthAt($repository);
+//testaGetStudentsBirthAt($repository);
 
 function testaSvareRemove($repository){
     $student = new Student(
@@ -34,3 +34,6 @@ function testaSvareRemove($repository){
     //var_dump($repository->save($student));
     var_dump($repository->remove($student));
 }
+
+$studentsWhitPhones = $repository->getStudentsWithPhones();
+var_dump($studentsWhitPhones);

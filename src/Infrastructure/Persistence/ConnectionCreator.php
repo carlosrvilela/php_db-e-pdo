@@ -9,6 +9,9 @@ class ConnectionCreator
     public static function createConnection(): PDO
     {
         $dbPath = __DIR__ . '/../../../banco.sqlite';
-        return $pdo = new PDO('sqlite:'.$dbPath);
+        $connecion = new PDO('sqlite:'.$dbPath);
+        //$connecion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); padão no php 8
+
+        return $connecion;
     }
 }
